@@ -1,0 +1,183 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{% static 'main/booking/css/booking.css' %}">
+		<link rel="stylesheet" href="{% static 'main/css/camera.css' %}">
+		<link rel="stylesheet" href="{% static 'main/css/owl.carousel.css' %}">
+		<script src="{% static 'main/js/jquery.ui.totop.js' %}"></script>
+		<script src="{% static 'main/js/owl.carousel.js' %}"></script>
+		<script src="{% static 'main/js/camera.js' %}"></script>
+		<!--[if (gt IE 9)|!(IE)]><!-->
+		<script src="{% static 'main/js/jquery.mobile.customized.min.js' %}"></script>
+		<!--<![endif]-->
+		<script src="{% static 'main/booking/js/booking.js' %}"></script>
+		<script>
+			$(document).ready(function(){
+				jQuery('#camera_wrap').camera({
+					loader: false,
+					pagination: false ,
+					minHeight: '444',
+					thumbnails: false,
+					height: '28.28125%',
+					caption: true,
+					navigation: true,
+					fx: 'mosaic'
+				});
+				$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+
+	</head>
+	<body class="page1" id="top">
+		<div class="main">
+
+			<div class="slider_wrapper ">
+				<div id="camera_wrap" class="">
+					<div data-src="{% static 'main/images/slide.jpg' %}" ></div>
+					<div data-src="{% static 'main/images/slide1.jpg' %}" ></div>
+					<div data-src="{% static 'main/images/slide2.jpg' %}"></div>
+				</div>
+			</div>
+			<div class="container_12">
+				<div class="grid_4">
+					<div class="banner">
+						<div class="maxheight">
+							<div class="banner_title">
+								<img src="{% static 'main/images/icon2.png' %}" alt="">
+								<div class="extra_wrapper">Лучшие
+									<div class="color1">Авто</div>
+								</div>
+							</div>
+							У нас широкий ассортимент автомобилей различных марок и моделей. Мы гарантируем нашим клиентам высокое качество автомобилей и безопасность на дороге.
+							Наш автопарк включает в себя компактные автомобили, седаны, кроссоверы, внедорожники и многие другие типы автомобилей.							<a href="#" class="fa fa-share-square"></a>
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="banner">
+						<div class="maxheight">
+							<div class="banner_title">
+								<img src="{% static 'main/images/icon2.png' %}" alt="">
+								<div class="extra_wrapper">Лучшая
+									<div class="color1">цена</div>
+								</div>
+							</div>
+							Гарантия лучшей цены <br>
+							Нашли такое же предложение за меньшие деньги? Мы предложим такую же цену.
+							<a href="#" class="fa fa-share-square"></a>
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="banner">
+						<div class="maxheight">
+							<div class="banner_title">
+								<img src="{% static 'main/images/icon1.png' %}" alt="">
+								<div class="extra_wrapper">Лучший
+									<div class="color1">сервис</div>
+								</div>
+							</div>
+							Гибкие условия аренды
+							Большинство бронирований можно бесплатно отменить или изменить не позднее чем за 48 часов до получения автомобиля.
+							<a href="#" class="fa fa-share-square"></a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="c_phone">
+				Номер для связи: +996(700)700700
+			</div>
+<!--==============================Content=================================-->
+			<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - April 07, 2014!</div>
+				<div class="container_12">
+					<div class="grid_5">
+						<h3>Форма для бронирования</h3>
+						<form id="bookingForm">
+							<div class="fl1">
+								<div class="tmInput">
+									<input name="Name" placeHolder="Имя:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
+								</div>
+							</div>
+							<div class="fl1">
+								<div class="tmInput">
+									<input name="Email" placeHolder="Email:" type="text" data-constraints="@NotEmpty @Required @Email">
+								</div>
+							</div>
+							<div class="clear"></div>
+							<br>
+							<strong>тел:</strong>
+							<div class="input-group mb-3">
+							  <span class="input-group-text">+966
+							  <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+							  </span>
+							</div>
+<!--							<div class="tmInput">-->
+<!--								<input name="Номер" placeHolder="" type="text" data-constraints="@NotEmpty @Required">-->
+<!--							</div>-->
+							<div class="clear"></div>
+							<strong>Дата</strong>
+							<label class="tmDatepicker">
+								<input type="text" name="Дата"	placeHolder='' data-constraints="@NotEmpty @Required @Date">
+							</label>
+							<div class="clear"></div>
+							<br>
+							 <div class="col-md-4">
+								<label for="inputState" class="form-label">Класс автомобиля</label>
+								<select id="inputState" class="form-select">
+									<option selected>Эконом</option>
+								    <option selected>Стандарт</option>
+									<option selected>Люкс</option>
+								    <option>...</option>
+								</select>
+							 </div>
+<!--							<div class="tmRadio">-->
+<!--								<p>Комфорт</p>-->
+<!--								<input name="Комфорт" type="radio" id="tmRadio0" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' checked/>-->
+<!--								<span>Cheap</span>-->
+<!--								<input name="Комфорт" type="radio" id="tmRadio1" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />-->
+<!--								<span>Standart</span>-->
+<!--								<input name="Комфорт" type="radio" id="tmRadio2" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />-->
+<!--								<span>Lux</span>-->
+<!--							</div>-->
+							<div class="clear"></div>
+							<div class="fl1 fl2">
+								<em>Adults</em>
+								<select name="Adults" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+									<option>1</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+								</select>
+								<div class="clear height1"></div>
+							</div>
+							<div class="fl1 fl2">
+								<em>Children</em>
+								<select name="Children" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+									<option>0</option>
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+								</select>
+							</div>
+							<div class="clear"></div>
+							<div class="tmTextarea">
+								<textarea name="Message" placeHolder="Message" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
+							</div>
+							<a href="#" class="btn" data-type="submit">Submit</a>
+						</form>
+					</div>
+					<div class="grid_6 prefix_1">
+						<a href="index2.html" class="type"><img src="{% static 'main/images/page1_img1.jpg' %}" alt=""><span class="type_caption">Эконом</span></a>
+						<a href="index2.html" class="type"><img src="{% static 'main/images/page1_img2.jpg' %}" alt=""><span class="type_caption">Стандарт</span></a>
+						<a href="index2.html" class="type"><img src="{% static 'main/images/page1_img3.jpg' %}" alt=""><span class="type_caption">Люкс</span></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

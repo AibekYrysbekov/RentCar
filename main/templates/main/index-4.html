@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content%}
+		<script src="{% static 'main/js/TMForm.js' %}"></script>
+<!--==============================Content=================================-->
+			<div class="content"><div class="ic"></div>
+				<div class="container_12">
+					<div class="grid_12">
+						<h3>Как нас найти</h3>
+						<div class="map">
+							<figure>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1461.907233682385!2d74.58987925239636!3d42.87676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec8203259984b%3A0x7036a47de19bb9f6!2zMjQzINC_0YDQvtGB0L8uINCn0YPQuSwg0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1677087777891!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</figure>
+						</div>
+					</div>
+					<div class="grid_5">
+						<h3>Контакты</h3>
+						<div class="map">
+							<div class="text1 color2">Наш офис находиться по адресу: город Бишкек, Проспект Чуй, дом № 243</div>
+							<p>Служба поддержки: +996(700)700-700 круглосуточно
+								<br>Офис: +996(700)700-701  c 09:00 до 18:00
+								<br>Автопарк +996(700)700-702   c 09:00 до 21:00</p>
+							<p>Use <span class="color1"><a href="http://www.templatetuning.com/" rel="nofollow">Template Tuning</a></span> services if you need any help in customization of your freebie.</p>
+						</div>
+					</div>
+					<div class="grid_6 prefix_1">
+						<h3>Contact Form</h3>
+						<form id="form">
+							<div class="success_wrapper">
+								<div class="success-message">Contact form submitted</div>
+							</div>
+							<label class="name">
+								<input type="text" placeholder="Name:" data-constraints="@Required @JustLetters" />
+								<span class="empty-message">*This field is required.</span>
+								<span class="error-message">*This is not a valid name.</span>
+							</label>
+							<label class="email">
+								<input type="text" placeholder="E-mail:" data-constraints="@Required @Email" />
+								<span class="empty-message">*This field is required.</span>
+								<span class="error-message">*This is not a valid email.</span>
+							</label>
+							<label class="phone">
+								<input type="text" placeholder="Phone:" data-constraints="@Required @JustNumbers"/>
+								<span class="empty-message">*This field is required.</span>
+								<span class="error-message">*This is not a valid phone.</span>
+							</label>
+							<label class="message">
+								<textarea placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+								<span class="empty-message">*This field is required.</span>
+								<span class="error-message">*The message is too short.</span>
+							</label>
+							<div>
+								<div class="clear"></div>
+								<div class="btns">
+									<a href="#" data-type="submit" class="btn">Send</a>
+									<a href="#" data-type="reset" class="btn">Clear</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+<!-{% endblock  %}
